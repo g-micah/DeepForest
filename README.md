@@ -1,2 +1,2 @@
 # DeepForest
-Web application built with the Spring framework
+A bug-tracker web application built with the Spring framework.
