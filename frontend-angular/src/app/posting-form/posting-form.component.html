@@ -1,0 +1,34 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #postingForm="ngForm">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" [(ngModel)]="posting.title" 
+          class="form-control" 
+          id="title" 
+          name="title" 
+          placeholder="Enter posting title"
+          required #title="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="email">Content</label>
+        <textarea [(ngModel)]="posting.content" 
+          class="form-control" 
+          id="content" 
+          name="content" 
+          placeholder="Enter posting content"
+          required #content="ngModel"></textarea>
+      </div>
+      <div class="form-group"  style="text-align: left;">
+        <label for="enabled">Enabled</label>
+        <input type="checkbox" [(ngModel)]="posting.enabled" 
+          class="form-control" style="width: 38px"
+          id="enabled" 
+          name="enabled" 
+          #enabled="ngModel">
+      </div>
+      <button type="submit" [disabled]="!postingForm.form.valid" 
+        class="btn btn-info">{{ mode }}</button>
+    </form>
+  </div>
+</div>

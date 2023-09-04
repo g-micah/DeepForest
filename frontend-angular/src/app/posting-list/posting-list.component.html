@@ -1,0 +1,26 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Content</th>
+          <th scope="col">Last Modified</th>
+          <th scope="col">Enabled?</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let posting of postings">
+          <td>{{ posting.title }}</td>
+          <td>{{ posting.content }}</td>
+          <td>{{ posting.lastModified }}</td>
+          <td>{{ posting.enabled }}</td>
+          <td style="text-align: center;"><a (click)="editPosting(posting)" class="btn btn-info">Edit</a></td>
+          <td style="text-align: center;"><a (click)="deletePosting(posting.id)" class="btn btn-info">Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
